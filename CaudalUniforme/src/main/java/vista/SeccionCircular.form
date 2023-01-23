@@ -58,7 +58,7 @@
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel9" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="Pnl_imagen" min="-2" pref="260" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
@@ -72,7 +72,7 @@
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel9" min="-2" pref="159" max="-2" attributes="0"/>
+                      <Component id="Pnl_imagen" min="-2" pref="159" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -355,7 +355,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel9">
+        <Component class="javax.swing.JLabel" name="Pnl_imagen">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/vista/caudal-circular.png"/>
