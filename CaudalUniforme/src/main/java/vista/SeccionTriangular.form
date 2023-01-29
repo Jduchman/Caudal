@@ -45,7 +45,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jLabel2" alignment="1" pref="841" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="330" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -55,9 +55,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel2" min="-2" pref="45" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="251" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="387" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -81,7 +81,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="prueba flavio gil"/>
+            <Property name="text" type="java.lang.String" value="Datos"/>
           </Properties>
         </Component>
       </SubComponents>

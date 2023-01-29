@@ -41,7 +41,7 @@ public class SeccionTriangular extends javax.swing.JFrame {
         jLabel2.setText("SECCIÓN TRIANGULAR");
         jLabel2.setOpaque(true);
 
-        jLabel1.setText("prueba flavio gil");
+        jLabel1.setText("Datos");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -49,7 +49,7 @@ public class SeccionTriangular extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 841, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(330, 330, 330)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -57,9 +57,9 @@ public class SeccionTriangular extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(193, 193, 193)
+                .addGap(57, 57, 57)
                 .addComponent(jLabel1)
-                .addGap(0, 251, Short.MAX_VALUE))
+                .addGap(0, 387, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
