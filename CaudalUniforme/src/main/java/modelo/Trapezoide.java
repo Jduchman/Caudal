@@ -29,7 +29,9 @@ public class Trapezoide {
         this.ancho_solera = ancho_solera;
         this.talud = talud;
     }
-
+    
+    public Trapezoide(){}
+    
     public float getCaudal() {
         return caudal;
     }

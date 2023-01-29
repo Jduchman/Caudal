@@ -107,6 +107,9 @@ public class Main extends javax.swing.JFrame {
         btn_fRectangular.setFocusable(false);
         btn_fRectangular.setOpaque(true);
         btn_fRectangular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_fRectangularMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_fRectangularMouseEntered(evt);
             }
@@ -214,10 +217,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_fTriangularMouseExited
 
     private void btn_fCircularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_fCircularMouseClicked
-        SeccionCircular secCircular = new SeccionCircular();
-        secCircular.setVisible(true);
+        SeccionTrapezoide secTrapezoide = new SeccionTrapezoide();
+        secTrapezoide.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_fCircularMouseClicked
+
+    private void btn_fRectangularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_fRectangularMouseClicked
+        SeccionRectangulo secRectangulo = new SeccionRectangulo();
+        secRectangulo.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_fRectangularMouseClicked
 
     /**
      * @param args the command line arguments

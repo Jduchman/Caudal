@@ -15,7 +15,7 @@ public class CaudalUniforme {
     public static void main(String[] args) {
 
         
-        Trapezoide tr = new Trapezoide((float) 18,(float)  0.013,(float)  0.0667, (float) 3.4, (float) 1.0);
+        Trapezoide tr = new Trapezoide((float) 0.48,(float)  0.013 ,(float)  0.045 ,(float) 0, (float) 0.75);
         tr.calcularTirante();
         tr.calcularArea();
         tr.calcularPerimetro();
