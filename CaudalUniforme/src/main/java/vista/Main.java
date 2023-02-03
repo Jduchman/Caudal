@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package vista;
 
 import javax.swing.JLabel;
@@ -65,7 +62,7 @@ public class Main extends javax.swing.JFrame {
         btn_fCircular.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_fCircular.setForeground(new java.awt.Color(255, 255, 255));
         btn_fCircular.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_fCircular.setText("CALCULAR FLUIDO CIRCULAR");
+        btn_fCircular.setText("CALCULAR FLUIDO TRAPEZOIDAL");
         btn_fCircular.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_fCircular.setFocusable(false);
         btn_fCircular.setOpaque(true);
@@ -85,7 +82,7 @@ public class Main extends javax.swing.JFrame {
         btn_fTrapezoidal.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_fTrapezoidal.setForeground(new java.awt.Color(255, 255, 255));
         btn_fTrapezoidal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_fTrapezoidal.setText("CALCULAR FLUIDO TRAPEZOIDAL");
+        btn_fTrapezoidal.setText("CALCULAR FLUIDO CIRCULAR");
         btn_fTrapezoidal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_fTrapezoidal.setFocusable(false);
         btn_fTrapezoidal.setOpaque(true);
@@ -127,6 +124,9 @@ public class Main extends javax.swing.JFrame {
         btn_fTriangular.setFocusable(false);
         btn_fTriangular.setOpaque(true);
         btn_fTriangular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_fTriangularMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_fTriangularMouseEntered(evt);
             }
@@ -227,6 +227,12 @@ public class Main extends javax.swing.JFrame {
         secRectangulo.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_fRectangularMouseClicked
+
+    private void btn_fTriangularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_fTriangularMouseClicked
+       SeccionTriangular secTriangular = new SeccionTriangular();
+        secTriangular.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_fTriangularMouseClicked
 
     /**
      * @param args the command line arguments

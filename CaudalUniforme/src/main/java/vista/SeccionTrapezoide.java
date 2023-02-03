@@ -6,7 +6,7 @@ package vista;
 
 import java.text.DecimalFormat;
 import javax.swing.ImageIcon;
-import modelo.Trapezoide;
+import modelo.Poligono;
 
 /**
  *
@@ -70,7 +70,6 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
         txt_radio = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        pnl_fondo = new javax.swing.JPanel();
         btn_volver = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -360,17 +359,6 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout pnl_fondoLayout = new javax.swing.GroupLayout(pnl_fondo);
-        pnl_fondo.setLayout(pnl_fondoLayout);
-        pnl_fondoLayout.setHorizontalGroup(
-            pnl_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 291, Short.MAX_VALUE)
-        );
-        pnl_fondoLayout.setVerticalGroup(
-            pnl_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 179, Short.MAX_VALUE)
-        );
-
         btn_volver.setBackground(new java.awt.Color(204, 0, 0));
         btn_volver.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btn_volver.setForeground(new java.awt.Color(255, 255, 255));
@@ -396,39 +384,35 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(pnl_fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_volver, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(67, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(btn_volver, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(pnl_fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_volver, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(10, Short.MAX_VALUE))
         );
@@ -465,6 +449,8 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
 
     private void btn_limpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_limpiarMouseClicked
         txt_caudal.setText("");txt_ancho.setText("");txt_pendiente.setText("");txt_rugosidad.setText("");
+        txt_area.setText("");txt_perimetro.setText("");txt_radio.setText("");txt_tirante.setText("");
+        txt_velocidad.setText("");
         
     }//GEN-LAST:event_btn_limpiarMouseClicked
 
@@ -483,7 +469,7 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_volverMouseExited
 
     private void btn_calcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_calcularMouseClicked
-        Trapezoide trape = new Trapezoide();
+        Poligono trape = new Poligono();
         float valorC = Float.valueOf(txt_caudal.getText());
         float valorA = Float.valueOf(txt_ancho.getText());
         float valorR = Float.valueOf(txt_rugosidad.getText());
@@ -498,17 +484,13 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
         
         System.out.println(trape.getPendiente());
         
-        trape.calcularTirante();
-        trape.calcularArea();
-        trape.calcularPerimetro();
-        trape.calcularRadioHidraulico();
-        trape.calcularVelocidad();
-
-        txt_tirante.setText(String.valueOf(new DecimalFormat("#.000").format(trape.getTirante())));
-        txt_perimetro.setText(String.valueOf(new DecimalFormat("#.000").format(trape.getPerimetro())));
-        txt_area.setText(String.valueOf(new DecimalFormat("#.000").format(trape.getArea())));
-        txt_radio.setText(String.valueOf(new DecimalFormat("#.000").format(trape.getRadioHidraulico())));
-        txt_velocidad.setText(String.valueOf(new DecimalFormat("#.000").format(trape.getVelocidad())));
+        trape.calcularCanalTrapezoidal();
+        
+        txt_tirante.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getTirante())));
+        txt_perimetro.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getPerimetro())));
+        txt_area.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getArea())));
+        txt_radio.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getRadioHidraulico())));
+        txt_velocidad.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getVelocidad())));
 
         
     }//GEN-LAST:event_btn_calcularMouseClicked
@@ -536,7 +518,6 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JPanel pnl_fondo;
     private javax.swing.JTextField txt_ancho;
     private javax.swing.JTextField txt_area;
     private javax.swing.JTextField txt_caudal;
