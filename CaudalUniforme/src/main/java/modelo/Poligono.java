@@ -21,6 +21,7 @@ public class Poligono {
     private float radioHidraulico;
     private float velocidad;
     private float espejoAgua;
+    private ArrayList<Float> listaIteración = new ArrayList<>();
     
 
 
@@ -91,6 +92,14 @@ public class Poligono {
         this.tirante = tirante;
     }
 
+    public ArrayList<Float> getListaIteración() {
+        return listaIteración;
+    }
+
+    public void setListaIteración(ArrayList<Float> listaIteración) {
+        this.listaIteración = listaIteración;
+    }
+
     public float getArea() {
         return area;
     }
@@ -127,12 +136,11 @@ public class Poligono {
         float primerDato = caudal*rugosidad;
         primerDato =(float) Math.pow(primerDato / (float) (Math.sqrt(pendiente)),(float) 3/5);
         float tiranteAux = 1;
-        System.out.println(primerDato);
         //CALCULO DE TIRANTE NORMAL   
         while(true){
-            
+            listaIteración.add(tiranteAux);
             tirante = primerDato * (float) Math.pow((ancho_solera + ((2*tiranteAux))*((float) Math.pow(1+(talud*talud), (float) 1/2))), (float) 2/5 )/(ancho_solera + (talud*tiranteAux));
-            System.out.println(tirante);
+            listaIteración.add(tirante);
             if(tirante == tiranteAux){
                 break;
             }
@@ -161,10 +169,13 @@ public class Poligono {
         float primerDato = caudal*rugosidad;
         primerDato = primerDato / (float) (Math.sqrt(pendiente));
         float tiranteAux = 1;
+
         //CALCULO DE TIRANTE NORMAL   
         while(true){
             
+            listaIteración.add(tiranteAux);
             tirante =(float) Math.pow(primerDato * (float) (Math.pow(ancho_solera+ (2*tiranteAux), (float) 2/3)), (float) 3/5 )/ancho_solera;
+            listaIteración.add(tirante);
             if(tirante == tiranteAux){
                 break;
             }

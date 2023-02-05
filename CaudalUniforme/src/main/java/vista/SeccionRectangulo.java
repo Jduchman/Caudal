@@ -2,6 +2,8 @@
 package vista;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 import modelo.Poligono;
 
 /**
@@ -51,7 +53,7 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
         btn_calcular = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_tirante = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -94,16 +96,16 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 12), new java.awt.Color(0, 51, 51))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel5.setText("Caudal");
+        jLabel5.setText("Caudal (m3/s)");
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel6.setText("Ancho de Solera");
+        jLabel6.setText("Ancho de Solera (m)");
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel7.setText("Rugosidad");
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel8.setText("Pendiente");
+        jLabel8.setText("Pendiente (m/m)");
 
         txt_caudal.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         txt_caudal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -136,7 +138,7 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
-                .addGap(44, 44, 44)
+                .addGap(74, 74, 74)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(txt_rugosidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txt_ancho, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -196,8 +198,8 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Resultados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 12), new java.awt.Color(0, 51, 51))); // NOI18N
 
-        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_tirante.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tbl_tirante.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -215,26 +217,26 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setSelectionBackground(new java.awt.Color(51, 51, 51));
-        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.getTableHeader().setResizingAllowed(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        tbl_tirante.setGridColor(new java.awt.Color(255, 255, 255));
+        tbl_tirante.setSelectionBackground(new java.awt.Color(51, 51, 51));
+        tbl_tirante.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        tbl_tirante.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tbl_tirante.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tbl_tirante.getTableHeader().setResizingAllowed(false);
+        tbl_tirante.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tbl_tirante);
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel9.setText("Iteración para el calculo de y:");
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel10.setText("Tirante Normal:");
+        jLabel10.setText("Tirante Normal (m):");
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel11.setText("Area Hidraulica");
+        jLabel11.setText("Area Hidraulica (m2)");
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel12.setText("Perimetro");
+        jLabel12.setText("Perimetro (m)");
 
         txt_tirante.setEditable(false);
         txt_tirante.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -264,10 +266,10 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
         txt_radio.setPreferredSize(new java.awt.Dimension(65, 26));
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel18.setText("Velocidad");
+        jLabel18.setText("Velocidad (m/s)");
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel19.setText("Radio Hidraúlico");
+        jLabel19.setText("Radio Hidraúlico (m)");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -278,16 +280,15 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(txt_tirante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel10)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel10)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(txt_tirante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)))
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19)
                     .addComponent(jLabel18)
@@ -367,16 +368,16 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(btn_volver, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(58, 58, 58)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btn_calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100)
+                        .addGap(155, 155, 155)
                         .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(183, 183, 183))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46))
         );
@@ -430,7 +431,7 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
     private void btn_limpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_limpiarMouseClicked
         txt_caudal.setText("");txt_ancho.setText("");txt_pendiente.setText("");txt_rugosidad.setText("");
         txt_perimetro.setText("");txt_area.setText("");txt_tirante.setText("");txt_velocidad.setText("");
-        txt_radio.setText("");
+        txt_radio.setText(""); tbl_tirante.setModel(new DefaultTableModel());
         
     }//GEN-LAST:event_btn_limpiarMouseClicked
 
@@ -449,30 +450,48 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_volverMouseExited
 
     private void btn_calcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_calcularMouseClicked
-        Poligono trape = new Poligono();
+        Poligono rect = new Poligono();
         float valorC = Float.valueOf(txt_caudal.getText());
         float valorA = Float.valueOf(txt_ancho.getText());
         float valorR = Float.valueOf(txt_rugosidad.getText());
         float valorP = Float.valueOf(txt_pendiente.getText());
 
-        trape.setCaudal(valorC);
-        trape.setAncho_solera(valorA);
-        trape.setPendiente(valorP);
-        trape.setTalud( 0 );
-        trape.setRugosidad(valorR);
+        rect.setCaudal(valorC);
+        rect.setAncho_solera(valorA);
+        rect.setPendiente(valorP);
+        rect.setTalud( 0 );
+        rect.setRugosidad(valorR);
         
         
-        trape.calcularCanalRectangular();
+        rect.calcularCanalRectangular();
+        cargarTabla(rect.getListaIteración());
         
-        txt_tirante.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getTirante())));
-        txt_perimetro.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getPerimetro())));
-        txt_area.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getArea())));
-        txt_radio.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getRadioHidraulico())));
-        txt_velocidad.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getVelocidad())));
+        txt_tirante.setText(String.valueOf(new DecimalFormat("#.0000").format(rect.getTirante())));
+        txt_perimetro.setText(String.valueOf(new DecimalFormat("#.0000").format(rect.getPerimetro())));
+        txt_area.setText(String.valueOf(new DecimalFormat("#.0000").format(rect.getArea())));
+        txt_radio.setText(String.valueOf(new DecimalFormat("#.0000").format(rect.getRadioHidraulico())));
+        txt_velocidad.setText(String.valueOf(new DecimalFormat("#.0000").format(rect.getVelocidad())));
 
         
     }//GEN-LAST:event_btn_calcularMouseClicked
 
+    public void cargarTabla(ArrayList<Float> lista){
+        DefaultTableModel modelo = new DefaultTableModel();
+        String[] columNames = {"F(y)", "y"};
+        modelo.setColumnIdentifiers(columNames);
+        
+        try {
+            Object[] fila = new Object[modelo.getColumnCount()];
+            for (int i = 0; i < lista.size(); i = i + 2) {
+                fila[0] = lista.get(i);
+                fila[1] = lista.get(i+1);
+                modelo.addRow(fila);
+            }
+            tbl_tirante.setModel(modelo);
+        } catch (Exception e) {
+            System.out.println("Error");
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btn_calcular;
@@ -494,7 +513,7 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbl_tirante;
     private javax.swing.JTextField txt_ancho;
     private javax.swing.JTextField txt_area;
     private javax.swing.JTextField txt_caudal;

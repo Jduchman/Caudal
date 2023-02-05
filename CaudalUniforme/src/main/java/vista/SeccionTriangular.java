@@ -96,13 +96,13 @@ public final class SeccionTriangular extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 12), new java.awt.Color(0, 51, 51))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel5.setText("Caudal");
+        jLabel5.setText("Caudal (m3/s)");
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel7.setText("Rugosidad");
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel8.setText("Pendiente");
+        jLabel8.setText("Pendiente (m/m)");
 
         txt_caudal.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         txt_caudal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -144,7 +144,7 @@ public final class SeccionTriangular extends javax.swing.JFrame {
                     .addComponent(txt_caudal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txt_pendiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txt_talud, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,13 +199,13 @@ public final class SeccionTriangular extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Resultados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 12), new java.awt.Color(0, 51, 51))); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel10.setText("Tirante Normal:");
+        jLabel10.setText("Tirante Normal (m)");
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel11.setText("Area Hidraulica");
+        jLabel11.setText("Area Hidraulica (m2)");
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel12.setText("Perimetro");
+        jLabel12.setText("Perimetro (m)");
 
         txt_tirante.setEditable(false);
         txt_tirante.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -235,13 +235,13 @@ public final class SeccionTriangular extends javax.swing.JFrame {
         txt_radio.setPreferredSize(new java.awt.Dimension(65, 26));
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel18.setText("Velocidad");
+        jLabel18.setText("Velocidad (m/s)");
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel19.setText("Radio Hidraúlico");
+        jLabel19.setText("Radio Hidraúlico (m)");
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel14.setText("Espejo de Agua");
+        jLabel14.setText("Espejo de Agua (m)");
 
         txt_espejoAgua.setEditable(false);
         txt_espejoAgua.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -275,7 +275,7 @@ public final class SeccionTriangular extends javax.swing.JFrame {
                     .addComponent(jLabel18)
                     .addComponent(jLabel12)
                     .addComponent(jLabel11))
-                .addGap(72, 72, 72)
+                .addGap(50, 50, 50)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txt_velocidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_perimetro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

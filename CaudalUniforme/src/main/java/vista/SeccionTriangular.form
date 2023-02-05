@@ -148,7 +148,7 @@
                           <Component id="txt_pendiente" max="32767" attributes="0"/>
                           <Component id="txt_talud" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="74" max="32767" attributes="0"/>
+                      <EmptySpace pref="39" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -186,7 +186,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Caudal"/>
+                <Property name="text" type="java.lang.String" value="Caudal (m3/s)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
@@ -202,7 +202,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Pendiente"/>
+                <Property name="text" type="java.lang.String" value="Pendiente (m/m)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txt_caudal">
@@ -362,7 +362,7 @@
                           <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txt_velocidad" min="-2" max="-2" attributes="0"/>
                           <Component id="txt_perimetro" min="-2" max="-2" attributes="0"/>
@@ -423,7 +423,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Tirante Normal:"/>
+                <Property name="text" type="java.lang.String" value="Tirante Normal (m)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
@@ -431,7 +431,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Area Hidraulica"/>
+                <Property name="text" type="java.lang.String" value="Area Hidraulica (m2)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
@@ -439,7 +439,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Perimetro"/>
+                <Property name="text" type="java.lang.String" value="Perimetro (m)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txt_tirante">
@@ -512,7 +512,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Velocidad"/>
+                <Property name="text" type="java.lang.String" value="Velocidad (m/s)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel19">
@@ -520,7 +520,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Radio Hidra&#xfa;lico"/>
+                <Property name="text" type="java.lang.String" value="Radio Hidra&#xfa;lico (m)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
@@ -528,7 +528,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Espejo de Agua"/>
+                <Property name="text" type="java.lang.String" value="Espejo de Agua (m)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txt_espejoAgua">

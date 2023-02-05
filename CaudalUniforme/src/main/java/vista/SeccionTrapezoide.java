@@ -5,7 +5,9 @@
 package vista;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
 import modelo.Poligono;
 
 /**
@@ -57,7 +59,7 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
         btn_calcular = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_tirante = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -100,16 +102,16 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 12), new java.awt.Color(0, 51, 51))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel5.setText("Caudal");
+        jLabel5.setText("Caudal (m3/s)");
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel6.setText("Ancho de Solera");
+        jLabel6.setText("Ancho de Solera (m)");
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel7.setText("Rugosidad");
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel8.setText("Pendiente");
+        jLabel8.setText("Pendiente (m/m)");
 
         txt_caudal.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         txt_caudal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -158,7 +160,7 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
                     .addComponent(txt_caudal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txt_pendiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txt_talud, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,8 +218,8 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Resultados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 12), new java.awt.Color(0, 51, 51))); // NOI18N
 
-        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_tirante.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tbl_tirante.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -235,26 +237,26 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setSelectionBackground(new java.awt.Color(51, 51, 51));
-        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.getTableHeader().setResizingAllowed(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        tbl_tirante.setGridColor(new java.awt.Color(255, 255, 255));
+        tbl_tirante.setSelectionBackground(new java.awt.Color(51, 51, 51));
+        tbl_tirante.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        tbl_tirante.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tbl_tirante.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tbl_tirante.getTableHeader().setResizingAllowed(false);
+        tbl_tirante.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tbl_tirante);
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel9.setText("Iteración para el calculo de y:");
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel10.setText("Tirante Normal:");
+        jLabel10.setText("Tirante Normal (m):");
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel11.setText("Area Hidraulica");
+        jLabel11.setText("Area Hidraulica (m2)");
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel12.setText("Perimetro");
+        jLabel12.setText("Perimetro (m)");
 
         txt_tirante.setEditable(false);
         txt_tirante.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -284,10 +286,10 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
         txt_radio.setPreferredSize(new java.awt.Dimension(65, 26));
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel18.setText("Velocidad");
+        jLabel18.setText("Velocidad (m/s)");
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel19.setText("Radio Hidraúlico");
+        jLabel19.setText("Radio Hidraúlico (m)");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -300,14 +302,14 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(txt_tirante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel10)))
+                        .addGap(37, 37, 37)
+                        .addComponent(txt_tirante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19)
                     .addComponent(jLabel18)
@@ -335,9 +337,9 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txt_tirante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)))))
+                                .addGap(63, 63, 63)))))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
@@ -383,10 +385,6 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(67, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
@@ -398,7 +396,11 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,9 +414,9 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -450,7 +452,7 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
     private void btn_limpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_limpiarMouseClicked
         txt_caudal.setText("");txt_ancho.setText("");txt_pendiente.setText("");txt_rugosidad.setText("");
         txt_area.setText("");txt_perimetro.setText("");txt_radio.setText("");txt_tirante.setText("");
-        txt_velocidad.setText("");
+        txt_velocidad.setText(""); txt_talud.setText(""); tbl_tirante.setModel(new DefaultTableModel());
         
     }//GEN-LAST:event_btn_limpiarMouseClicked
 
@@ -482,8 +484,6 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
         trape.setTalud( valorT );
         trape.setRugosidad(valorR);
         
-        System.out.println(trape.getPendiente());
-        
         trape.calcularCanalTrapezoidal();
         
         txt_tirante.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getTirante())));
@@ -492,9 +492,28 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
         txt_radio.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getRadioHidraulico())));
         txt_velocidad.setText(String.valueOf(new DecimalFormat("#.0000").format(trape.getVelocidad())));
 
-        
+        cargarTabla(trape.getListaIteración());
     }//GEN-LAST:event_btn_calcularMouseClicked
 
+    public void cargarTabla(ArrayList<Float> lista){
+        DefaultTableModel modelo = new DefaultTableModel();
+        String[] columNames = {"F(y)", "y"};
+        modelo.setColumnIdentifiers(columNames);
+        
+        try {
+            Object[] fila = new Object[modelo.getColumnCount()];
+            for (int i = 0; i < lista.size(); i = i + 2) {
+                fila[0] = lista.get(i);
+                fila[1] = lista.get(i+1);
+                modelo.addRow(fila);
+            }
+            tbl_tirante.setModel(modelo);
+        } catch (Exception e) {
+            System.out.println("Error");
+        }
+        
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btn_calcular;
@@ -517,7 +536,7 @@ public final class SeccionTrapezoide extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbl_tirante;
     private javax.swing.JTextField txt_ancho;
     private javax.swing.JTextField txt_area;
     private javax.swing.JTextField txt_caudal;
