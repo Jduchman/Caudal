@@ -7,10 +7,10 @@ import javax.swing.JLabel;
  *
  * @author Duchman
  */
-public class Main extends javax.swing.JFrame {
+public class PaginaPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form Main
+     * Creates new form PaginaPrincipal
     */
     public void ConfiguracioFrame(){
         this.setSize(810, 610);
@@ -27,7 +27,7 @@ public class Main extends javax.swing.JFrame {
     }
     
     
-    public Main() {
+    public PaginaPrincipal() {
         initComponents();
         ConfiguracioFrame();
     }
@@ -242,7 +242,8 @@ public class Main extends javax.swing.JFrame {
         secCirculo.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_fTrapezoidalMouseClicked
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btn_fCircular;
     private javax.swing.JLabel btn_fRectangular;

@@ -436,7 +436,7 @@ public final class SeccionRectangulo extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_limpiarMouseClicked
 
     private void btn_volverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_volverMouseClicked
-        Main menuP = new Main();
+        PaginaPrincipal menuP = new PaginaPrincipal();
         menuP.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_volverMouseClicked
